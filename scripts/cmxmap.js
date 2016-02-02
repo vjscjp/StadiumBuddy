@@ -98,11 +98,25 @@ function showUserMap(mapNameArg, imageNameArg, userToShow, userHistory) {
 
 function showContextMenu(event) {
     event.preventDefault();
-    $(".custom-menu").finish().toggle(100).
-    css({
-        top: event.pageY + "px",
-        left: event.pageX + 3 + "px"
-    })
+    var device_width = $(window).width();
+    if(device_width > 640){
+        $(".custom-menu").finish().toggle(100).
+        css({
+            top: event.pageY + "px",
+            left: event.pageX + 3 + "px"
+        }) 
+    }
+    
+    //for small devices
+    else{
+        var left  = Math.floor((device_width - 120)/2) ;
+        $(".custom-menu").finish().toggle(100).
+        css({
+            top: (event.pageY + 15) + "px",
+            left: left + "px"
+        }) 
+    }
+   
 }
 
 function doMenuSelection(action) {
@@ -157,8 +171,11 @@ function doMenuSelection(action) {
             },
             style: 'qtip-bootstrap',
             position: {
-              my: 'top center',
-              at: 'bottom center'
+                my: 'top center',
+                at: 'bottom center',
+                //adjust : {
+                  //  screen : true
+                //}
             }
         });
     });
@@ -170,7 +187,10 @@ function doMenuSelection(action) {
             style: 'qtip-bootstrap',
             position: {
               my: 'top center',
-              at: 'bottom center'
+              at: 'bottom center',
+               // adjust : {
+                //    screen : true
+            //    }
             }
         });
     });

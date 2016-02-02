@@ -59,6 +59,7 @@ function doLogin(password) {
     $("#loginForm").hide()
     $("#logo").hide()
     $("#heading").html('')
+    $('#topbar').removeClass('hide');
     $("#logoutButton").show()
     getUsers()
 }
@@ -70,6 +71,7 @@ function doLogout() {
   $("#logo").show()
   $("#heading").html(loginHeading)
   $("#loginForm").show()
+  $('#topbar').addClass('hide');
   $("#logoutButton").hide()
   $("#content").hide()
   $("#content").empty()
