@@ -17,7 +17,7 @@
 
     <!-- Library JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.1/jquery.qtip.min.js"></script>
+    <!--<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.1/jquery.qtip.min.js"></script>-->
     <script type="text/javascript" src="scripts/jquery.line.js"></script>
     <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
 
@@ -34,15 +34,18 @@
     <nav id="topbar" class="navbar navbar-default navbar-inverse hide">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-xs-9 navbar-title">
+                <div class="col-xs-8 navbar-title">
                 <div class="nav navbar-nav no-top-margin" >
                   <a class="navbar-brand" href="index.html">CMX Stadium Buddy on Shipped</a>
                 </div>
                 </div>
-                <div class="col-xs-3">
-                <ul class="nav navbar-nav navbar-right navbar-logout">
-                  <button id="logoutButton" class="btn btn-default navbar-btn rbutton" onclick="doLogout()">Logout</button>
-                </ul>
+                <div class="col-xs-4 bg-light">
+                   <!-- <ul class="nav navbar-nav navbar-right navbar-logout">
+                      <button id="logoutButton" class="btn btn-default navbar-btn rbutton" onclick="doLogout()">Logout</button>
+                    </ul> -->
+                    <div class="score-update">Team Red: <span class="red pull-right" id="team-red-score">2</span></div>
+                    <div class="score-update">Team Blue: <span class="blue pull-right" id="team-blue-score">3</span></div>
+                    <div class="clearfix"></div>
                 </div>
             </div>
           </div>
@@ -61,6 +64,10 @@
         <i class="fa fa-male"></i><i class="fa fa-female"></i>
         Nearest Restrooms
       </li>
+      <li data-action="Shop" class="list-group-item">
+        <i class="fa fa-shopping-bag"></i>
+        Nearest Shops
+      </li>
       <li data-action="reset" class="list-group-item">
         <i class="fa fa-times"></i>
         Reset
@@ -71,9 +78,14 @@
       <div id="logo">
         <img src="img/logo_blue.png">
       </div>
-      <h1 id="heading"></h1>
+        <div>
+          <h1 id="heading" class="pull-left"></h1>
+          <button id="alert-btn" type="button" class="btn btn-link alert-btn pull-right" data-toggle="modal" data-target="#discount-modal">Alerts</button>
+            <div class="clear-fix"></div>
+        </div>
+    
       <div id="errorMessage" class="alert alert-danger alert-dismissible errorMessage">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close" >
         <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -134,7 +146,55 @@
     </div>
 
     <div id="map" style="display:none"></div>
-    <div id="content" style="display:none;text-align:center;background:#f0f0f0"></div>
+    <div id="content"></div>
     <script type="text/javascript">doLogout()</script>
+      
+   <!-- Modal -->
+    <div id="tip-modal" class="modal  fade" role="dialog">
+      <div class="modal-dialog modal-sm">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+      
+       <div id="discount-modal" class="modal  fade" role="dialog">
+      <div class="modal-dialog modal-sm">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+        <div class="modal-header">Current Offers!</div>
+          <div class="modal-body">
+            <div class="container-fluid">
+                <div class="row discount-row ">
+                    <div class="col-xs-5 discount-label">Caps</div>
+                    <div class="col-xs-7 discount-value">Upto 65% Off</div>
+                </div>
+                <div class="row discount-row ">
+                    <div class="col-xs-5 discount-label">Drinks</div>
+                    <div class="col-xs-7 discount-value">Get 4 in the cost of 3</div>
+                </div>
+                <div class="row discount-row ">
+                    <div class="col-xs-5 discount-label">Snacks</div>
+                    <div class="col-xs-7 discount-value">Free Soft Drinks</div>
+                </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+      
   </body>
 </html>

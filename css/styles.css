@@ -226,7 +226,7 @@ p {
   width: 100%;
   max-width: 750px;
   margin: 0 auto;
-  padding: 10px 20px 0 20px;
+  padding: 20px 20px 0 20px;
 }
 
 #content {
@@ -483,7 +483,7 @@ html[xmlns] .clearfix {
 }
 
 #logo img{
-  width: 200px;
+  width: 150px;
   height: auto;
 }
 
@@ -518,3 +518,109 @@ html[xmlns] .clearfix {
 .navbar-title{
     padding-bottom: 10px;
 }
+
+.bg-light{
+    color: #FFF;
+    padding-left: 8px;
+    padding-top: 12px;
+    font-size: 14px;
+    
+}
+
+.score-update{
+    padding-top: 10px;
+} 
+
+.score-update:first-child{
+    padding-top: 0;
+}
+
+.score-update span{
+    margin-top:-2px;
+    display: inline-block;
+}
+
+.red{
+    color: red;
+    font-weight: bold;
+    background: #FFF;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+.blue{
+    color: blue;
+    font-weight: bold;
+    background: #FFF;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+
+.modal-body, .modal-footer{
+    padding: 5px;
+}
+
+#topbar{
+    margin-bottom: 0;
+}
+
+#content{
+    padding-bottom: 15px;
+    display:none;
+    text-align:center;
+    background:#f0f0f0
+}
+
+.clear-fix{
+    clear: both;
+}
+
+.alert-btn{
+    margin-top: 11px;
+    font-size: 15px;
+    font-weight: bold;
+    display: none;
+}
+
+#discount-modal .modal-header{
+    text-align: center;
+    font-size: 20px;
+}
+
+.discount-row{
+    min-height: 30px;
+    text-align: left;
+    border-bottom: 1px solid #EAEAEA;
+    padding: 15px 10px;
+}
+
+.discount-label{
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+
+.discount-value{
+    font-size: 22px;
+    color:  lightslategray;
+    background: yellow;
+}
+
+.aliceblue-bg{
+    background-color: aliceblue;
+}
+
+.linen-bg{
+    background-color: linen;
+}
+
+
+.discount-row:last-child{
+    border-bottom: none;
+}
+

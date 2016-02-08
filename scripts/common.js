@@ -42,3 +42,30 @@ function showRestError(jqXHR, textStatus, errorThrown) {
 function cmxUrl(method) {
   return global.server + "/api" + method + "?token=" + global.apiToken
 }
+
+
+//load the scores now
+setInterval(function(){
+    var score = parseInt($('#team-red-score').text());
+    score++;
+    
+    if(score > 50){
+        score = 1;
+    }
+    
+    $('#team-red-score').text(score)
+    
+},10000);
+
+//load the scores now
+setInterval(function(){
+    var score = parseInt($('#team-blue-score').text());
+    score++;
+    
+    if(score > 50){
+        score = 1;
+    }
+    
+    $('#team-blue-score').text(score)
+    
+},15000);

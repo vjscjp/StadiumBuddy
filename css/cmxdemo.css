@@ -73,7 +73,9 @@
 }
 
 .userPoint {
-  display:block; width:15px; height:15px;
+  display:block; 
+    width:7px; 
+    height:7px;
   position:absolute;
   color: black;
   background-color: red;
@@ -175,3 +177,4 @@ table.t1 {
   font-size: 10px;
   color: #fff;
 }
+

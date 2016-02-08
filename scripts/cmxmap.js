@@ -125,6 +125,7 @@ function doMenuSelection(action) {
         case "Gate": places = gates; break;
         case "Food Service": places = foodservice; break;
         case "Restroom": places = restrooms; break;
+        case "Shop" : places = shops; break;
         case "reset": places = []; break;
     }
     $(".userPoint").remove()
@@ -138,7 +139,7 @@ function doMenuSelection(action) {
         var place = places[i]
         var x = place.x * scale
         var y = place.y * scale
-        var tooltip = '<div class="' + styles[place.crowd] +'"" style="display:none" >' +
+        var tooltip = '<div class="' + styles[place.crowd] +'" style="display:none" >' +
                       '<h2>' + place.name + '</h2>' +
                       '<h3><b>Current Wait:</b> ' + place.wait + ' mins</h3>' +
                       '<img class="centerImg" src="img/' + place.img + '" />' +
@@ -156,45 +157,22 @@ function doMenuSelection(action) {
         map.append($("<img />", {
               src: "img/" + place.icon,
               class:"userPointIcon",
-              width: "32px",
+              width: "20px",
               onclick:"drawPath(" + place.path + "," + x + "," + y + ")"
-          }).css({top:(y+10) + 'px', left:iconXposn + 'px', cursor: "pointer"}))
+          }).css({top:(y+5) + 'px', left:iconXposn + 'px', cursor: "pointer"}))
         map.append(tooltip)
     }
     lastAction = action
 
-    // Tooltip for services
-    $('.userPoint').each(function() { // Notice the .each() loop, discussed below
-        $(this).qtip({
-            content: {
-                text: $(this).next('div') // Use the "div" element next to this for the content
-            },
-            style: 'qtip-bootstrap',
-            position: {
-                my: 'top center',
-                at: 'bottom center',
-                //adjust : {
-                  //  screen : true
-                //}
-            }
-        });
+    
+    $(document).delegate('.userPoint, .userPointIcon', 'click', function(){
+        var content = $(this).next('div');
+        $('#tip-modal .modal-body').empty().append(content.clone()).find('[class^="qtip"]').show();
+        $('#tip-modal').modal('show');
+        
     });
-    $('.userPointIcon').each(function() { // Notice the .each() loop, discussed below
-        $(this).qtip({
-            content: {
-                text: $(this).next('div') // Use the "div" element next to this for the content
-            },
-            style: 'qtip-bootstrap',
-            position: {
-              my: 'top center',
-              at: 'bottom center',
-               // adjust : {
-                //    screen : true
-            //    }
-            }
-        });
-    });
-
+    
+  
     if (lastAction != "reset") {
         var content = jQuery('#content');
         var imgWidth = map.offset().left

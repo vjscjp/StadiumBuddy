@@ -16,7 +16,7 @@ var foodservice = [
    {"x": 283, "y": 295, "crowd": 1, "wait": 10, "name": "Papa John's Pizza", "img":"papa-johns.png", "path":"[[387,265],[386,249],[306,258],[312,300]]", "icon":"papa-johns-icon.png"},
    {"x": 398, "y": 200, "crowd": 1, "wait": 9, "name": "360 Sizzle", "img":"360-sizzle.png", "path":"[[387,265],[386,249],[407,247]]", "icon":"360-sizzle-icon.png"},
    {"x": 481, "y": 200, "crowd": 1, "wait": 11, "name": "Ciao Down!", "img":"ciao-down.png", "path":"[[387,265],[386,249],[487,246]]", "icon":"ciao-down-icon.png"},
-]
+];
 
 var gates = [{"x": 135, "y": 275, "crowd": 0, "wait": 0, "name": "NE Gate", "img": "gate.png", "path":"[[387,265],[380,172],[247,186],[190,197]]", "icon":"gate-icon.png"}]
 
@@ -25,4 +25,12 @@ var restrooms = [
    {"x": 349, "y": 255, "crowd": 2, "wait": 8, "name": "Women's Restroom", "img":"womens-room.png", "path":"[[387,265],[386,249],[354,251]]", "icon":"womens-room-icon.png"},
    {"x": 532, "y": 255, "crowd": 0, "wait": 1, "name": "Men's Restroom", "img":"mens-room.png", "path":"[[387,265],[386,249],[543,251]]", "icon":"mens-room-icon.png"},
    {"x": 554, "y": 256, "crowd": 1, "wait": 3, "name": "Women's Restroom", "img":"womens-room.png", "path":"[[387,265],[386,249],[561,251]]", "icon":"womens-room-icon.png"}
-]
+];
+
+
+var shops = [
+   {"x": 235, "y": 215, "crowd": 2, "wait": 4, "name": "T-Shirt Shop", "img":"tshirt.jpg", "path":"[[387,265],[386,249],[250,264]]", "icon":"tshirt-icon.jpg"},
+   {"x": 330, "y": 255, "crowd": 1, "wait": 1, "name": "Poster Shop", "img":"poster.jpg", "path":"[[387,265],[386,249],[407,247]]", "icon":"poster-icon.jpg"},
+   {"x": 398, "y": 200, "crowd": 1, "wait": 2, "name": "Shoes Shop", "img":"shoes.jpg", "path":"[[387,265],[386,249],[340,252]]", "icon":"shoes-icon.jpg"},
+   {"x": 554, "y": 256, "crowd": 2, "wait": 5, "name": "Caps Shop", "img":"caps.jpg", "path":"[[387,265],[386,249],[487,246]]", "icon":"caps-icon.jpg"}
+];
